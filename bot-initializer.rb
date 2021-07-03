@@ -2,7 +2,6 @@ require 'discordrb'
 require './environment.rb'
 require './hash_generator.rb'
 
-
 class DeployBot
 
     def initialize
@@ -10,10 +9,6 @@ class DeployBot
         @my_bot.run true
 
         command_hash = HashGenerator.new("triggers_and_responses.csv")
-
-        # @my_bot.message contains: "~info" do |event|
-        #     event.respond "TEST RUBY BOT CONNECTED"
-        # end
 
         @my_bot.message content: /[~]\w+/ do |event|
             trigger_string = event.content[/[~]\w+/]
@@ -24,12 +19,7 @@ class DeployBot
             else
                 event.respond "I'm sorry. That is not a command I recognize."
             end
-            # event.respond command_hash.hash[]
-            # event.respond command_hash.hash["info"]
-            # event.respond "This worked"
         end
-
-        #commands go here
 
         @my_bot.join
     end
