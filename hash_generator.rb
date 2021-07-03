@@ -16,6 +16,3 @@ class HashGenerator
         @hash = Hash[@keys.map {|key, value| [key, value]}]
     end
 end
-
-# ha = HashGenerator.new("trigger-words-and-responses.csv")
-# puts ha.hash
