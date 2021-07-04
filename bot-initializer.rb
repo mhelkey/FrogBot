@@ -17,7 +17,7 @@ class DeployBot
             if command_hash.hash.key?(trigger_string)
                 event.respond command_hash.hash[trigger_string]
             else
-                event.respond "I'm sorry. That is not a command I recognize."
+                event.respond command_hash.hash["unknown"]
             end
         end
 
